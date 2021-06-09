@@ -6,7 +6,7 @@
 				{{ random.values }} - {{ breakdown.values }}
 			</p>
 		</div> -->
-		<button class="btn btn-primary" @click="generateSpiral()"> Click here!</button>
+		<button class="form-control" @click="generateSpiral()"> Click here!</button>
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin slice" viewBox="0 0 728 400" v-for="(random, randomKey) in randoms" :key="randomKey">
 		    <!--Background-->  
 		    <path d="M0 0h728v400H0z" fill="#fff"/> 
@@ -93,11 +93,15 @@ export default {
 				lists.push(breakdown.values)
 			})
 			return lists.join("  ")
+		},
+
+		generateSpiral(){
+			this.fetchData()
 		}
 	},
 
 	mounted() {
-		this.fetchData();
+		//this.fetchData();
 
 		
 	}
